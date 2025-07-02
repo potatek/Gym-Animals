@@ -11,8 +11,8 @@ Temat: Sklep Internetowy – ,,*Gym Animals’’*
 
    Celem projektu było stworzenie sklepu internetowego „Gym Animals” z odzieżą sportową: użytkownicy mogą przeglądać, wyszukiwać i sortować produkty, wybierać rozmiary, zarządzać koszykiem oraz składać zamówienia z odbiorem w paczkomacie lub dostawą pod wskazany adres, a następnie dokonywać płatności i przeglądać historię zakupów. Dodatkowo po zakupie można wystawić opinię z oceną i zdjęciem jeżeli jest się użytkownikiem zalogowanym oraz przejrzeć swoja historię zamówień. System oferuje rejestrację, logowanie z JWT oraz reset hasła, a dla administratorów dostępny jest CRUD do zarządzania produktami, obsługi zamówień i moderacji recenzji. 
 
-1. Wymagania funkcjonalne
-   1. Moje wymagania:
+2. Wymagania funkcjonalne
+   
 
       1\. Użytkownik może wejść na stronę i bez logowania się wyświetlić wszystkie produkty wraz z ocenami. Mechanizm wyświetlania ma dać możliwość użytkownikowi filtrowania i sortowania produktów po nazwie, kategorii i cenie.
 
@@ -42,14 +42,14 @@ Temat: Sklep Internetowy – ,,*Gym Animals’’*
 
       11\. Użytkownik ma możliwość wyszukiwania opinii na stronie szczegółowej produktu oraz produktu po nazwie (należy zastosować pełnotekstowe indeksowanie komentarzy).
 
-1. Uruchomienie aplikacji
+3. Uruchomienie aplikacji
 
 Do przechowywania moich danych używam XAMPP, żeby strona zadziałała należy go uruchomić, uruchamiając moduł Apache i MySQL, następnie przechodząc do zakładki Admin dla MySQL należy zaimportować bazę hoodie\_shop.sql podana w folderze zip. Używam Node.js wiec również trzeba go zainstalować. Mój projekt podzielony jest na Front-end (folder client) i Back-end (folder server), należy przejść do folderu hoodie\_shop/server oraz hoodie\_shop/client i w konsoli cmd wykonać najpierw polecenie **npm install**, a następnie **npm start**. Po tym serwer odpali się na localhost:5000, a klient na localhost:3000.
 
 
 
-1. Dokładniejszy opis wszystkich funkcjonalności z ilustracjami
-   1. Użytkownik niezalogowany – gość 
+4. Dokładniejszy opis wszystkich funkcjonalności z ilustracjami
+   4.1 Użytkownik niezalogowany – gość 
 
 ![](media/image001.png)
 
@@ -57,7 +57,7 @@ Niezalogowany użytkownik może przeglądać dostępne produkty. Może zobaczyć
 
 ![](media/image002.png)
 
-` `Rejestracja klienta (w bazie stworzone są już 3 konta [email; hasło]: [klient1@ex.com; klient1], [klient2@ex.com; klient2],[admin@ex.com; admin]). 
+Rejestracja klienta (w bazie stworzone są już 3 konta [email; hasło]: [klient1@ex.com; klient1], [klient2@ex.com; klient2],[admin@ex.com; admin]). 
 
 ![](media/image003.png)
 
@@ -95,7 +95,7 @@ Po wyborze dostawy przechodzimy do podsumowania, w tym momencie (jeżeli stan ma
 
 ![](media/image014.png)  
 
-1. Użytkownik zalogowany
+4.2 Użytkownik zalogowany
 
 ![](media/image015.png)
 
@@ -115,7 +115,7 @@ Dodatkowo użytkownik może edytować/usunąć swoja opinie o produkcie.
 
 Może tez wystawić nowa opinie o produkcie, jeżeli jeszcze tego nie zrobił, a zakupił ten przedmiot. (Np. klient2 ma niewystawiona opinie na Koszulkę z chomikiem).
 
-1. Admin
+4.3 Admin
 
 ![](media/image020.png)
 
@@ -129,6 +129,6 @@ Admin może robić wszystko to co zwykły użytkownik z dodatkowymi funkcjonalno
 
 Dodatkowo admin ma dostęp do zakładki ,,Admin: produkty” gdzie może dodawać nowe produkty lub edytować istniejące. (ekran dodawania rozni się od edycji tylko tym ze na początku formularz jest cały pusty, najłatwiej działanie edycji jest sprawdzić na cenie) 
 
-1. Co jeszcze chciałbym dodać
+5. Co jeszcze chciałbym dodać
 
 Aktualnie koszyk po wylogowaniu się jest usuwany w przyszłości chciałbym dodać opcje unieważniania się koszyka po jakimś czasie (np. po 30 min). W przesłanym projekcie nie zdążyłem jednak tego zaimplementować.
