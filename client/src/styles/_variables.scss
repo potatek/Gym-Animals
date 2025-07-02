@@ -1,0 +1,35 @@
+$primary:   #A4C639 !default;       
+$color-bg: #F5F5F5;
+$color-surface: #f8f9fa;
+$color-primary:  #A4C639 !default;   
+$color-secondary: #333333;
+$color-muted: #6c757d;
+$color-border: #e2e8f0;
+$color-hover: darken($color-primary, 10%);
+
+$form-select-focus-border-color: $primary !default;
+$form-select-focus-box-shadow: 0 0 0 .25rem rgba(199,234,70,.25) !default;
+
+$table-bg:          $color-surface !default;
+
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+
+
+
+$font-heading: 'Montserrat', sans-serif;
+$font-body:    'Roboto',    sans-serif;
+$fs-base:      16px;
+$line-height-base: 1.6;
+
+
+$spacer: 1rem;
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 

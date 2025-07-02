@@ -1,0 +1,52 @@
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
+import { useNavigate, Link } from 'react-router-dom';
+
+export default function Login() {
+  const { login, loading } = useContext(AuthContext);
+  const [email, setEmail]     = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const [error, setError]     = useState(null);
+  //proba zalogowania
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setError(null);
+    try {
+      await login(email, password);
+      navigate('/');
+    } catch (err) {
+      setError(err.response?.data?.error || 'Błąd logowania');
+    }
+  };
+
+  return (
+    <div className="container mt-4" style={{maxWidth: '400px'}}>
+      <h2>Logowanie</h2>
+      {error && <div className="alert alert-danger">{error}</div>}
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label>Email</label>
+          <input
+            type="email" className="form-control"
+            value={email} onChange={e => setEmail(e.target.value)} required />
+        </div>
+        <div className="mb-3">
+          <label>Hasło</label>
+          <input
+            type="password" className="form-control"
+            value={password} onChange={e => setPassword(e.target.value)} required />
+        </div>
+        <button className="btn btn-primary" disabled={loading}>
+          {loading ? 'Ładowanie…' : 'Zaloguj'}
+        </button>
+      </form>
+      <p className="mt-3">
+        Nie masz konta? <Link to="/register">Zarejestruj się</Link>
+      </p>
+      <p className="mt-3">
+        <Link to="/forgot-password">Zapomniałem hasła</Link>
+      </p>
+    </div>
+  );
+}

@@ -1,0 +1,169 @@
+
+@import "variables";
+
+$lime:       #A4C639;
+$lime-light: #CBEA7B;
+$white:      #FFFFFF;
+$light-gray: #F5F5F5;
+$gray:       #CCCCCC;
+$dark-gray:  #333333;
+
+$theme-colors: (
+  "primary":   $color-primary,
+  "secondary": $color-secondary,
+  "light":     lighten($color-bg, 5%),
+  "dark":      $color-secondary
+) !default;
+
+@import "~bootstrap/scss/bootstrap";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-bg;
+  font-family: $font-body;
+  font-size: $fs-base;
+  line-height: $line-height-base;
+  color: $color-secondary;
+}
+
+
+.navbar {
+  background: $color-bg;
+  border-bottom: 1px solid $color-border;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: $spacer 2*$spacer;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .navbar-brand {
+    font-family: $font-heading;
+    font-weight: 600;
+  }
+
+  .btn {
+    border-radius: .25rem;
+    font-weight: 500;
+
+    &.btn-primary {
+      background: $color-primary;
+      border: none;
+
+      &:hover {
+        background: $color-hover;
+      }
+    }
+    &.btn-outline-secondary {
+      color: $color-secondary;
+      border: 1px solid $color-secondary;
+
+      &:hover {
+        background: $color-secondary;
+        color: $color-surface;
+      }
+    }
+  }
+}
+
+
+
+a {
+  color: $lime;
+  &:hover { color: $lime-light; }
+}
+
+
+.form-control {
+  border-radius: 0.25rem;
+  border:         1px solid $gray;
+
+  &:focus {
+    border-color: $lime;
+    box-shadow:   0 0 0 0.2rem rgba($lime, 0.25);
+  }
+}
+
+.form-select {
+  --bs-form-select-border-color:      #A4C639;
+  --bs-form-select-focus-border-color:#A4C639;
+  --bs-form-select-focus-box-shadow:  0 0 0 .25rem rgba(199,234,70,.25);
+}
+
+
+.table {
+  th, td {
+    border-top: 1px solid $gray;
+  }
+  
+}
+
+
+.text-lime { color: $lime !important; }
+.bg-lime   { background-color: $lime !important; color: $white !important; }
+
+
+.card {
+  background: $color-surface;
+  border: none;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: .5rem;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+
+  .card-body {
+    padding: $spacer;
+  }
+}
+
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
+.product-image-wrapper {
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  color: $color-surface;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity .2s ease;
+  pointer-events: none;
+}
+
+.product-image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+.filter-bar {
+  display: flex;
+  gap: .75rem;
+  padding: 1rem;
+  background-color: $color-surface;   
+  border: 1px solid #e2e8f0;
+  border-radius: .5rem;
+  align-items: center;
+}
